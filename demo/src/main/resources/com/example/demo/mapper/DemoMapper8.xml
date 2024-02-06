@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper 
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.DemoMapper8">
+
+    <select id="getfkojinById" resultType="DemoEntityf_kojin8">
+        SELECT kojin_no, shimei FROM dlgmain.f_kojin WHERE kojin_no = #{kojin_no}
+        union all
+        SELECT kojin_no, shimei FROM dlgmain.f_kojin WHERE kojin_no = #{kojin_no}
+    </select>
+
+</mapper>
