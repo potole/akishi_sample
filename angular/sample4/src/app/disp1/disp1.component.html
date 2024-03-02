@@ -1,0 +1,20 @@
+<div>
+  <input type="number" id="indata" [(ngModel)]="inputNo" >
+  <button type="button" id="load-button" (click)="getData()">読み込み</button>
+  <button type="button" id="clear-button" (click)="clearData()">クリア</button>
+</div>
+
+<div *ngIf="getData">
+    <table class="data-table" *ngIf="jsonData">
+      <thead>
+        <tr>
+          <th *ngFor="let key of getObjectKeys(jsonData[0])">{{ key }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of jsonData">
+          <td *ngFor="let key of getObjectKeys(item)">{{ item[key] }}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>

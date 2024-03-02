@@ -1,0 +1,44 @@
+  /* ボタンのスタイル */
+  #load-button, #clear-button {
+    background-color: #4c4eaf;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  /* 読み込みボタンとクリアボタンを横並びに配置する */
+  #load-button, #clear-button {
+    float: left;
+  }
+  
+/* カラフルなテーブルのスタイル */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+  
+/* テーブルのヘッダーとセルのスタイル */
+.data-table th, .data-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+  
+/* テーブルのヘッダーのスタイル */
+.data-table th {
+  background-color: #4c4eaf; /* ヘッダーの背景色を緑に設定 */
+  color: white; /* ヘッダーのテキスト色を白に設定 */
+}
+  
+/* 偶数行の背景色を変更して交互に表示する */
+.data-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+  

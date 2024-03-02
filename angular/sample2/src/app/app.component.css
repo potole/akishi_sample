@@ -1,0 +1,34 @@
+/* app.component.css */
+
+/* テーブル全体のスタイル */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd; /* 枠線 */
+  }
+  
+  /* テーブルヘッダーのスタイル */
+  th {
+    background-color: #f2f2f2; /* ヘッダーの背景色 */
+    border: 1px solid #ddd; /* 枠線 */
+    padding: 8px; /* パディング */
+    text-align: left; /* テキストを左寄せ */
+  }
+  
+  /* テーブルデータのスタイル */
+  td {
+    border: 1px solid #ddd; /* 枠線 */
+    padding: 8px; /* パディング */
+    text-align: left; /* テキストを左寄せ */
+  }
+  
+  /* 偶数行の背景色を交互に変更 */
+  tr:nth-child(even) {
+    background-color: #f9f9f9; /* 偶数行の背景色 */
+  }
+  
+  /* ホバー時の背景色 */
+  tr:hover {
+    background-color: #f2f2f2; /* ホバー時の背景色 */
+  }
+  

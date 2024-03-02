@@ -1,0 +1,22 @@
+<h1>JSONデータを表示するサンプル</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th *ngFor="let header of jsonHeaders">{{ header }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of jsonData">
+      <td>{{ data.id }}</td>
+      <td>{{ data.name }}</td>
+      <td>{{ data.age }}</td>
+    </tr>
+    <tr>
+      <td><input type="text" [(ngModel)]="newData.id" placeholder="ID"></td>
+      <td><input type="text" [(ngModel)]="newData.name" placeholder="Name"></td>
+      <td><input type="text" [(ngModel)]="newData.age" placeholder="Age"></td>
+      <td><button (click)="addData()">Add</button></td>
+    </tr>
+  </tbody>
+</table>

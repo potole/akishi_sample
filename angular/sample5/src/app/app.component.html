@@ -1,0 +1,11 @@
+<h1>チャット</h1>
+
+<input type="text" [(ngModel)]="name" placeholder="名前を入力">
+<input type="text" [(ngModel)]="messageText" placeholder="メッセージを入力" (keyup.enter)="sendMessage()">
+
+<div class="messages">
+  <div *ngFor="let message of messages" [ngClass]="{'left': message.user === name, 'right': message.user !== name}">
+    <p>{{ message.user }}</p>
+    <p>{{ message.text }}</p>
+  </div>
+</div>

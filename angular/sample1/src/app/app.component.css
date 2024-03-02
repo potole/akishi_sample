@@ -1,0 +1,30 @@
+
+h1 {
+  color: brown;
+}
+
+.colorful-box {
+  width: 550px;
+  height: 450px;
+  margin: 100px auto;
+  padding-left: 10px;
+  background-color: #ffcccc; 
+  border-radius: 20px; 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
+  animation: changeColor 5s infinite alternate;
+}
+
+@keyframes changeColor {
+  0% {
+      background-color: #ffcccc; 
+      transform: scale(1);
+  }
+  50% {
+      background-color: #ccffcc; 
+      transform: scale(1.2);
+  }
+  100% {
+      background-color: #ccccff;
+      transform: scale(1);
+  }
+}
