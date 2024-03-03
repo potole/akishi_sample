@@ -1,11 +1,14 @@
-<h1>チャット</h1>
+<h1>闇チャット</h1>
 
 <input type="text" [(ngModel)]="name" placeholder="名前を入力">
-<input type="text" [(ngModel)]="messageText" placeholder="メッセージを入力" (keyup.enter)="sendMessage()">
+<textarea [(ngModel)]="messageText" placeholder="メッセージを入力 (Shift + Enterで改行)" (keydown.enter)="onEnterKeyDown($event)"></textarea>
 
-<div class="messages">
-  <div *ngFor="let message of messages" [ngClass]="{'left': message.user === name, 'right': message.user !== name}">
-    <p>{{ message.user }}</p>
-    <p>{{ message.text }}</p>
+<div class="messages" #messagesContainer>
+  <div *ngFor="let message of messages" [ngClass]="{'message-left': message.user === name, 'message-right': message.user !== name}">
+    <div class="message-box">
+      <p><span class="message-user">{{ message.user }}：</span></p>
+      <div [innerHTML]="message.text | nl2br"></div>
+    </div>
   </div>
 </div>
+

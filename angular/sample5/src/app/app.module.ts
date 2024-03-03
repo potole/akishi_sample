@@ -5,12 +5,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { SocketIoConfig, SocketIoModule } from 'ngx-socket-io';
+import { Nl2brPipe } from './nl2br.pipe';
 
 const config: SocketIoConfig = { url: 'http://192.168.1.100:3000', options: {} };
 
 @NgModule({
   declarations: [
     AppComponent,
+    Nl2brPipe,
   ],
   imports: [
     BrowserModule,

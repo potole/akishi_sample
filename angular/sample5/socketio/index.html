@@ -1,0 +1,25 @@
+<h1>チャット</h1>
+<input type="text" id="message">
+<button id="send">送信</button>
+<ul id="messages"></ul>
+
+<script src="https://cdn.socket.io/4.4.1/socket.io.min.js"></script>
+<script>
+var socket = io();
+
+var messageInput = document.getElementById('message');
+var sendButton = document.getElementById('send');
+var messagesList = document.getElementById('messages');
+
+sendButton.addEventListener('click', function () {
+  var message = messageInput.value;
+  socket.emit('message', message);
+  messageInput.value = '';
+});
+
+socket.on('message', function (message) {
+  var li = document.createElement('li');
+  li.textContent = message;
+  messagesList.appendChild(li);
+});
+</script>

@@ -35,7 +35,6 @@ export class Disp1Component implements OnInit {
       (error) => {
         // HTTPリクエストが失敗した場合の処理
         console.error("データを取得できませんでした:", error);
-        // エラーメッセージをユーザーに通知するなど、適切なエラーハンドリングを行う
         this.jsonData = null;
         alert("データを取得できませんでした。");
       }

@@ -1,37 +1,3 @@
-// var app = require('express')();
-// var server = require('http').Server(app);
-// var io = require('socket.io')(server);
-
-// server.listen(3000);
-
-// io.on('connection', function (socket) {
-//   console.log('a user connected');
-
-//   socket.on('message', function (message) {
-//     io.emit('message', message);
-//   });
-
-//   socket.on('disconnect', function () {
-//     console.log('a user disconnected');
-//   });
-// });
-
-// var socketIo = require('socket.io');
-
-// var io = socketIo(3000);
-
-// io.on('connection', (socket) => {
-//   console.log('A user connected');
-
-//   socket.on('message', (message) => {
-//     io.emit('message', message);
-//   });
-
-//   socket.on('disconnect', () => {
-//     console.log('A user disconnected');
-//   });
-// });
-
 var socketIo = require('socket.io');
 
 var io = socketIo(3000);

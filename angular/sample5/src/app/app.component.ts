@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewChecked, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Socket } from 'ngx-socket-io';
 
 @Component({
@@ -6,7 +6,9 @@ import { Socket } from 'ngx-socket-io';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewChecked {
+
+  @ViewChild('messagesContainer') private messagesContainer: ElementRef;
 
   messages: any[] = [];
   name: string;
@@ -24,6 +26,19 @@ export class AppComponent implements OnInit {
     });
   }
 
+  ngAfterViewChecked() {
+    this.scrollToBottom();
+  }
+
+  onEnterKeyDown(event: KeyboardEvent): void {
+    if (event.shiftKey) {
+      return;
+    }
+  
+    event.preventDefault(); // デフォルトのEnterキーの動作をキャンセル
+    this.sendMessage(); 
+  }
+
   sendMessage() {
     if (this.name && this.messageText) { 
       this.socket.emit('message', {
@@ -33,4 +48,12 @@ export class AppComponent implements OnInit {
       this.messageText = '';
     }
   }
+  
+  scrollToBottom(): void {
+    try {
+      this.messagesContainer.nativeElement.scrollTop = this.messagesContainer.nativeElement.scrollHeight;
+    } catch(err) { }
+  }
+  
 }
+
